@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Reservations</string>
+    <string name="name">Name:</string>
+    <string name="ast">*</string>
+    <string name="nHint">John</string>
+    <string name="contact">Contact:</string>
+    <string name="cHint">9XXXXXXX</string>
+    <string name="date">Date:</string>
+    <string name="time">Time:</string>
+    <string name="pax">Pax:</string>
+    <string name="non_smoking_area">Non-Smoking Area</string>
+    <string name="smoking_area">Smoking Area</string>
+    <string name="imptSA">* toggle button for smoking area preference</string>
+    <string name="imptR">* max pax for each reservation only 12, contact us for bigger reservations</string>
+    <string name="reset">Reset</string>
+    <string name="submit_reservation">Submit Reservation</string>
+</resources>
