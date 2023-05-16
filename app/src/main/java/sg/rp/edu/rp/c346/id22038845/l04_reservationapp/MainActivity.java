@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         Calendar cal= Calendar.getInstance();
         int minDay = 1;
         int minMonth = 7;
-        int minYear = 2020;
+        int minYear = 2023;
         cal.set(minYear,minMonth-1,minDay);
         //dp.setMinDate(System.currentTimeMillis()); //set min date to current date
         dp.setMinDate(cal.getTimeInMillis());
@@ -191,7 +191,6 @@ public class MainActivity extends AppCompatActivity {
     private String timeStr(int hour, int min){
         //allows you to show AM and PM, works when return string ampm with the hour and min in desired string format.
         String ampm ="AM";
-        String output =hour +" : "+ min +" "+ ampm;;
         if(hour>=12){
             if(hour!=12){
                 hour-=12;
@@ -200,15 +199,8 @@ public class MainActivity extends AppCompatActivity {
         }else if(hour==0){
             hour=12;
         }
-        String zero ="0";
-        if(min==0){
 
-            output= hour +" : "+ min +zero+" "+ ampm;
-        }else if(min<10){
-            output= hour +" : "+zero+ min +" "+ ampm;
-        }
-
-        return output;
+        return String.format("%02d:%02d %s",hour,min,ampm);
     }
 
     //converts date into string
