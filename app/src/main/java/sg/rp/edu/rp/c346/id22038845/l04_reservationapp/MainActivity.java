@@ -61,19 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
         //date/time picker settings:
         Calendar cal= Calendar.getInstance();
-        int minDay = 1;
-        int minMonth = 7;
-        int minYear = 2023;
-        cal.set(minYear,minMonth-1,minDay);
-        //dp.setMinDate(System.currentTimeMillis()); //set min date to current date
-        dp.setMinDate(cal.getTimeInMillis());
-        dp.init(minYear,minMonth-1,minDay,null); //sets the date on start
+        dp.setMinDate(System.currentTimeMillis()); //set min date to current date
         tp.setCurrentHour(19);
         tp.setCurrentMinute(30);
 
         //has a limit, if a month does not have certain day it will over show till the next mth
         int maxDay = 30;
-        int maxMonth = 6;
+        int maxMonth = 7;
         int maxYear = 2023;
         cal.set(maxYear, maxMonth-1 , maxDay);
         dp.setMaxDate(cal.getTimeInMillis());
@@ -105,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         dp.getCalendarView().setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int day) {
-                dp.init(year,month,day,null);
+                //dp.init(year,month,day,null);
 
             }
         });
@@ -124,9 +118,6 @@ public class MainActivity extends AppCompatActivity {
                     dPost = " ";
                 }
 
-
-                /*boolean checks = false;
-                while(checks==false){*/
 
                     if(nText.getText().length()<=0||cText.getText().length()<=0||pText.getText().length()<=0){
                         ast1.setVisibility(View.VISIBLE);
@@ -171,9 +162,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Calendar cal = Calendar.getInstance();
-                int rDay = cal.get(Calendar.DAY_OF_MONTH);
-                int rMonth = cal.get(Calendar.MONTH);
-                int rYear = cal.get(Calendar.YEAR);
+                int rDay = 1;
+                int rMonth = 5;
+                int rYear = 2023;
                 dp.updateDate(rYear,rMonth,rDay);
                 tp.setCurrentHour(8);
                 tp.setCurrentMinute(0);
